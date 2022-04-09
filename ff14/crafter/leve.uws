@@ -1,0 +1,48 @@
+
+Const ENTER_KEY = VK_NUMPAD0
+Const ORDER_TARGET_KEY = VK_1 // create enemy taeget 1 macro
+Const DELICERY_TAEGET_KEY = VK_2 // create enemy taeget 2 macro
+
+Const LV84_IMG = GET_CUR_DIR + "\84.bmp"
+Const CARROT_IMG = GET_CUR_DIR + "\carrots-rape.BMP"
+Const RECEIVE_IMG = GET_CUR_DIR + "\receive.BMP"
+public ff_window_id = GETID("FINAL FANTASY XIV")
+
+if ff_window_id < 0
+  msgbox("Final Fantasy XIV is not found.")
+  exit
+endif
+public x1 = STATUS(ff_window_id, ST_X)
+public y1 = STATUS(ff_window_id, ST_Y)
+public x2 = x1 + STATUS(ff_window_id, ST_CLWIDTH)
+public y2 = y1 + STATUS(ff_window_id, ST_CLHEIGHT)
+
+if !STATUS(ff_window_id, ST_ACTIVE)
+  CTRLWIN(ff_window_id, ACTIVATE)
+endif
+order()
+
+procedure imgClick(img)
+  if CHKIMG( img, 0 , x1, y1, x2, y2, 0, 20, -1)
+    BTN(LEFT ,CLICK , G_IMG_X + 10, G_IMG_Y + 10)
+    BTN(LEFT ,CLICK , G_IMG_X + 10, G_IMG_Y + 10) // Twice click for click miss
+  else
+    msgbox("img is not found." + img)
+    exit
+  endif
+fend
+
+procedure order()
+  KBD(ORDER_TARGET_KEY, 0, 500)
+  KBD(ENTER_KEY, 0, 500)
+  KBD(ENTER_KEY, 0, 500)
+  KBD(VK_NUMPAD2, 0, 500) // select crafter
+  KBD(ENTER_KEY, 0, 500)
+  Sleep(1)
+  imgClick(LV84_IMG)
+  imgClick(CARROT_IMG)
+  Sleep(1)
+  imgClick(RECEIVE_IMG)
+  KBD(VK_ESC, 0, 500)
+  KBD(VK_ESC, 0, 500)
+fend
