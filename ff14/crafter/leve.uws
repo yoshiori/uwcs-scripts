@@ -1,10 +1,12 @@
 OPTION OPTFINALLY
 
-CALL ChkImgX.uws
-
+// USER SETTTING
+Const REPEAT_COUNT = 22
 Const ENTER_KEY = VK_NUMPAD0
 Const ORDER_TARGET_KEY = VK_1 // create enemy taeget 1 macro
 Const DELIVERY_TAEGET_KEY = VK_2 // create enemy taeget 2 macro
+
+CALL ChkImgX.uws
 
 Const LV84_IMG = GET_CUR_DIR + "\84.bmp"
 Const CARROT_IMG = GET_CUR_DIR + "\carrots-rape.bmp"
@@ -21,7 +23,7 @@ if !STATUS(ff_window_id, ST_ACTIVE)
 endif
 
 STARTUP_CHKIMGX()
-for i = 0 to 1
+for i = 1 to REPEAT_COUNT
   order()
   delivery()
 next
