@@ -23,13 +23,19 @@ endif
 order()
 
 procedure imgClick(img)
-  if CHKIMG( img, 0 , x1, y1, x2, y2, 0, 20, -1)
-    BTN(LEFT ,CLICK , G_IMG_X + 10, G_IMG_Y + 10)
-    BTN(LEFT ,CLICK , G_IMG_X + 10, G_IMG_Y + 10) // Twice click for click miss
-  else
-    msgbox("img is not found." + img)
-    exit
-  endif
+  for i = 0 to 2
+    if CHKIMG( img, 0 , x1, y1, x2, y2, 0, 20, -1)
+      break
+    else
+      if i = 2
+        msgbox("Image not found -> " + img)
+        exit
+      endif
+      Sleep(1)
+    endif
+  next
+  BTN(LEFT ,CLICK , G_IMG_X + 10, G_IMG_Y + 10)
+  BTN(LEFT ,CLICK , G_IMG_X + 10, G_IMG_Y + 10) // Twice click for click miss
 fend
 
 procedure order()
@@ -38,10 +44,8 @@ procedure order()
   KBD(ENTER_KEY, 0, 500)
   KBD(VK_NUMPAD2, 0, 500) // select crafter
   KBD(ENTER_KEY, 0, 500)
-  Sleep(1)
   imgClick(LV84_IMG)
   imgClick(CARROT_IMG)
-  Sleep(1)
   imgClick(RECEIVE_IMG)
   KBD(VK_ESC, 0, 500)
   KBD(VK_ESC, 0, 500)
