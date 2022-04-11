@@ -1,12 +1,12 @@
 OPTION OPTFINALLY
 
 // USER SETTTING
-Const REPEAT_COUNT = 5
+Const REPEAT_COUNT = 1
 Const ENTER_KEY = VK_NUMPAD0
 Const ORDER_TARGET_KEY = VK_1 // create enemy taeget 1 macro
 Const DELIVERY_TAEGET_KEY = VK_2 // create enemy taeget 2 macro
 
-CALL GET_CUR_DIR + "..\..\lib\ChkImgX.uws"
+call ChkImgX.uws
 
 Const LV84_IMG = GET_CUR_DIR + "\imgs\84.bmp"
 Const CARROT_IMG = GET_CUR_DIR + "\imgs\carrots-rape.bmp"
