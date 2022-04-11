@@ -1,7 +1,7 @@
 OPTION OPTFINALLY
 
 // USER SETTTING
-Const REPEAT_COUNT = 22
+Const REPEAT_COUNT = 5
 Const ENTER_KEY = VK_NUMPAD0
 Const ORDER_TARGET_KEY = VK_1 // create enemy taeget 1 macro
 Const DELIVERY_TAEGET_KEY = VK_2 // create enemy taeget 2 macro
@@ -46,6 +46,7 @@ procedure imgClick(img)
 fend
 
 procedure delivery()
+  MMV(0,0)
   KBD(DELIVERY_TAEGET_KEY, 0, 500)
   KBD(ENTER_KEY, 0, 1000)
   KBD(ENTER_KEY, 0, 1000)
