@@ -8,9 +8,9 @@ Const DELIVERY_TAEGET_KEY = VK_2 // create enemy taeget 2 macro
 
 CALL ChkImgX.uws
 
-Const LV84_IMG = GET_CUR_DIR + "\84.bmp"
-Const CARROT_IMG = GET_CUR_DIR + "\carrots-rape.bmp"
-Const RECEIVE_IMG = GET_CUR_DIR + "\receive.bmp"
+Const LV84_IMG = GET_CUR_DIR + "\imgs\84.bmp"
+Const CARROT_IMG = GET_CUR_DIR + "\imgs\carrots-rape.bmp"
+Const RECEIVE_IMG = GET_CUR_DIR + "\imgs\receive.bmp"
 ff_window_id = GETID("FINAL FANTASY XIV")
 
 if ff_window_id < 0
