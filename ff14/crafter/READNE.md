@@ -13,5 +13,5 @@ This is a script to receive and deliver the lv 84 levequest for the culinarian.
 - Change job to culinarian.
 - Put the carrot rapé in the top left of your bags.
 - Mark NPC that order with **attack1** and NPC that deliver with **attack2**.
-- Run the script in a location accessible to both NPCs
+- Run `leve.uws` script in a location accessible to both NPCs
   - A dialog will appear to enter how many deliveries are to be made first.
