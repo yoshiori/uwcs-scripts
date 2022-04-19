@@ -1,0 +1,49 @@
+OPTION OPTFINALLY
+
+Const REPEAT_COUNT = input("Repeat count", 1)
+Const ENTER_KEY = VK_NUMPAD0
+Const CREATE_MACRO_KEY = VK_4 // create macro
+
+call ChkImgX.uws
+
+Const CREATE_IMG = GET_CUR_DIR + "\imgs\84.bmp"
+ff_window_id = GETID("FINAL FANTASY XIV")
+
+if ff_window_id < 0
+  msgbox("Final Fantasy XIV is not found.")
+  EXITEXIT
+endif
+
+if !STATUS(ff_window_id, ST_ACTIVE)
+  CTRLWIN(ff_window_id, ACTIVATE)
+endif
+
+
+STARTUP_CHKIMGX()
+for i = 1 to REPEAT_COUNT
+  create()
+next
+SHUTDOWN_CHKIMGX()
+
+procedure imgClick(img)
+  max_count = 15
+  for i = 0 to max_count
+    if CHKIMGX( img )
+      break
+    else
+      if i = max_count
+        msgbox("Image not found -> " + img)
+        EXITEXIT
+      endif
+      Sleep(3)
+    endif
+  next
+  BTN(LEFT ,CLICK , G_IMGX_X + 10, G_IMGX_Y + 10)
+  BTN(LEFT ,CLICK , G_IMGX_X + 10, G_IMGX_Y + 10) // Twice click for click miss
+fend
+
+procedure create()
+  MMV(0,0)
+  imgClick(CREATE_MACRO_KEY)
+  KBD(CREATE_MACRO_KEY, 0, 1000)
+fend
