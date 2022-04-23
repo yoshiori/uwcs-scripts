@@ -1,0 +1,11 @@
+OPTION OPTFINALLY
+
+Const ATTACK_SKILL_KEY = VK_6 // create macro
+
+logprint(true)
+
+while true
+ kbd(ATTACK_SKILL_KEY, 10000)
+ Dim date = G_TIME_YY4 + "/" + G_TIME_MM2 + "/" + G_TIME_DD2 + " " + G_TIME_HH2 + ":" + G_TIME_NN2 + ":" + G_TIME_ss2
+ print "attack! " + date
+wend
