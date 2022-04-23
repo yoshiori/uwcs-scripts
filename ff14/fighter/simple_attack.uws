@@ -2,7 +2,6 @@ OPTION OPTFINALLY
 
 Const ATTACK_SKILL_KEY = VK_6 // attak skil keys
 
-logprint(true)
 ff_window_id = GETID("FINAL FANTASY XIV")
 
 if ff_window_id < 0
