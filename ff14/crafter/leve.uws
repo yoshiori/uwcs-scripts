@@ -11,6 +11,7 @@ call ChkImgX.uws
 Const LV84_IMG = GET_CUR_DIR + "\imgs\84.bmp"
 Const CARROT_IMG = GET_CUR_DIR + "\imgs\carrots-rape.bmp"
 Const RECEIVE_IMG = GET_CUR_DIR + "\imgs\receive.bmp"
+Const MENU_IMG = GET_CUR_DIR + "\imgs\menu.png"
 ff_window_id = GETID("FINAL FANTASY XIV")
 
 if ff_window_id < 0
@@ -45,6 +46,17 @@ procedure imgClick(img)
   BTN(LEFT ,CLICK , G_IMGX_X + 10, G_IMGX_Y + 10) // Twice click for click miss
 fend
 
+procedure imgClose(img, closeKey)
+  for i = 0 to 10
+    if ChkImgX(img)
+      KBD(closeKey, 0, 500)
+      Sleep(1)
+    else
+      break
+    endif
+  next
+fend
+
 procedure delivery()
   MMV(0,0)
   KBD(DELIVERY_TAEGET_KEY, 0, 500)
@@ -71,4 +83,5 @@ procedure order()
   imgClick(RECEIVE_IMG)
   KBD(VK_ESC, 0, 500)
   KBD(VK_ESC, 0, 500)
+  imgClose(LV84_IMG, VK_ESC)
 fend
