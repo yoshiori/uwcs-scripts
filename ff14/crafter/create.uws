@@ -2,7 +2,7 @@ OPTION OPTFINALLY
 
 Const REPEAT_COUNT = input("Repeat count", 1)
 Const ENTER_KEY = VK_NUMPAD0
-Const CREATE_MACRO_KEY = VK_4 // create macro
+Const CREATE_MACRO_KEY = VK_NUMPAD4 // create macro
 
 call ChkImgX.uws
 

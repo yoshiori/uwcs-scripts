@@ -3,8 +3,8 @@ OPTION OPTFINALLY
 // USER SETTTING
 Const REPEAT_COUNT = input("Repeat count", 1)
 Const ENTER_KEY = VK_NUMPAD0
-Const ORDER_TARGET_KEY = VK_1 // create enemy taeget 1 macro
-Const DELIVERY_TAEGET_KEY = VK_2 // create enemy taeget 2 macro
+Const ORDER_TARGET_KEY = VK_NUMPAD1 // create enemy taeget 1 macro
+Const DELIVERY_TAEGET_KEY = VK_NUMPAD2 // create enemy taeget 2 macro
 
 call ChkImgX.uws
 
@@ -76,7 +76,7 @@ procedure order()
   KBD(ORDER_TARGET_KEY, 0, 500)
   KBD(ENTER_KEY, 0, 1000)
   KBD(ENTER_KEY, 0, 1000)
-  KBD(VK_NUMPAD2, 0, 1000) // select crafter
+  KBD(VK_DOWN, 0, 1000) // select crafter
   KBD(ENTER_KEY, 0, 1000)
   imgClick(LV84_IMG)
   imgClick(CARROT_IMG)
