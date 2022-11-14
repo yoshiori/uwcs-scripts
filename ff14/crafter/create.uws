@@ -3,6 +3,7 @@ OPTION OPTFINALLY
 Const REPEAT_COUNT = input("Repeat count", 1)
 Const ENTER_KEY = VK_NUMPAD0
 Const CREATE_MACRO_KEY = VK_NUMPAD4 // create macro
+Const MACRO_STOP_KEY = VK_NUMPAD9 // Macro stop
 
 call ChkImgX.uws
 
@@ -28,6 +29,7 @@ procedure imgClick(img)
   max_count = 15
   for i = 0 to max_count
     if CHKIMGX( img )
+      KBD(MACRO_STOP_KEY, 0, 1000)
       break
     else
       if i = max_count

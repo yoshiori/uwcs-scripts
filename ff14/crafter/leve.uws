@@ -69,7 +69,6 @@ procedure delivery()
   KBD(ENTER_KEY, 0, 1000)
   KBD(ENTER_KEY, 0, 1000)
   KBD(ENTER_KEY, 0, 1000)
-  KBD(ENTER_KEY, 0, 1000)
 fend
 
 procedure order()
